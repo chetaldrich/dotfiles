@@ -2,8 +2,9 @@
 " Authors: Chet Aldrich
 " Description: A basic .vimrc, since I'm pretty new to Vim. Should get more expansive as I have time to edit it, and may be geared towards web development initially as I get my bearings. 
 "------------------------------------------------------------
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
+" Calls the pathogen plugin manager
+call pathogen#infect()
+call pathogen#helptags()
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
