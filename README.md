@@ -9,7 +9,8 @@ Current Feature Set
 1. Supertab (autocompletion)
 2. Indexed search
 3. jQuery syntax highlighting
-
+4. Autocompletion of {}, [], "", etc.
+5. Ruby config
 TODO
 ------
 1. HTML/HAML autocompletion
@@ -20,7 +21,7 @@ TODO
 
 
 If you would like to use it, clone the repository in your home directory, 
-and then create a .vimrc in your home, and then type the following:
+and then create a .vimrc in your home, and then save the following into that .vimrc file:
 
     runtime vimrc
 

@@ -23,7 +23,6 @@ set number
 "------------------------------------------------------------
 set hidden
 
-
 " Better command-line completion
 set wildmenu
 
@@ -101,7 +100,6 @@ set pastetoggle=<F11>
 
 "TODO find some good indentation options
 
-set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
