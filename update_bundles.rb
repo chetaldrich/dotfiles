@@ -12,7 +12,7 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
-bundles_dir = File.join(File.dirname(__FILE__), "../bundle")
+bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
 FileUtils.cd(bundles_dir)
 
