@@ -11,6 +11,9 @@ Current Feature Set
 3. jQuery syntax highlighting
 4. Autocompletion of {}, [], "", etc.
 5. Ruby config
+6. Snipping (autocompletion of boilerplate for basic control structures)
+7. Syntax checking support for various languages
+
 TODO
 ------
 1. HTML/HAML autocompletion

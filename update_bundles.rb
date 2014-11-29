@@ -3,9 +3,10 @@
 git_bundles = [ 
   "git://github.com/ervandew/supertab.git",
   "git://github.com/vim-ruby/vim-ruby.git",
-  "git://github.com/tsaleh/vim-matchit.git",
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/jiangmiao/auto-pairs.git",
+  "git://github.com/msanders/snipmate.vim.git",
+  "git://github.com/scrooloose/syntastic.git",
 ]
 
 vim_org_scripts = [
