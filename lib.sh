@@ -19,4 +19,5 @@ function run(){
 
 function install(){
     bird "Installing various command line tools..."
+    ./scripts/brewinstall.sh
 }
