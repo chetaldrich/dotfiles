@@ -1,8 +1,9 @@
 #!/bin/bash
 
 
-src=$HOME/dotfiles/src
-scripts=$HOME/dotfiles/scripts
+msrc=./msrc
+lsrc=./lsrc
+scripts=./scripts
 
 ESC_SEQ="\x1b["
 COL_CYAN=$ESC_SEQ"36;01m"
@@ -17,7 +18,13 @@ function run(){
     echo -en "$COL_YELLOW ⇒ $COL_RESET"$1": "
 }
 
-function install(){
-    bird "Installing various command line tools..."
+function linstall(){
+    bird "Updating apt-get..."
+    sudo apt-get update
+    bird "Symlinking .vim"
+}
+
+function minstall(){
+    bird "Installing various command line tools for OSX..."
     ./scripts/brewinstall.sh
 }
