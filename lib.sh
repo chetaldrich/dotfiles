@@ -27,4 +27,6 @@ function linstall(){
 function minstall(){
     bird "Installing various command line tools for OSX..."
     ./scripts/brewinstall.sh
+    bird "Installing Atom packages..."
+    ./scripts/apm.sh
 }
