@@ -3,6 +3,7 @@
 
 msrc=./msrc
 lsrc=./lsrc
+ssrc=./ssrc
 scripts=./scripts
 
 ESC_SEQ="\x1b["
@@ -29,4 +30,8 @@ function minstall(){
     ./scripts/brewinstall.sh
     bird "Installing Atom packages..."
     ./scripts/apm.sh
+}
+
+function sinstall(){
+    bird "Adding and symlinking vim configurations..."
 }

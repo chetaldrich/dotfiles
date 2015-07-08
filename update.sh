@@ -11,20 +11,14 @@ source ./lib.sh
 
 bird "Hello! Welcome to the interactive install prompt!"
 
-read -r -p "Linux or Mac? (mac/linux/*)" maclinuxresponse
+read -r -p "Linux, Server, or Mac? (mac/linux/server/*): " maclinuxresponse
 
 if [[ $maclinuxresponse =~ ^(mac) ]];then
-    linstall
-else if [[ $maclinuxresponse =~ ^(linux) ]];then
     minstall
+elif [[ $maclinuxresponse =~ ^(linux) ]];then
+    linstall
+elif [[ $maclinuxresponse =~ ^(server) ]];then
+    sinstall
 else 
-    bird "Ok. Some other time."
-fi
-
-read -r -p "Would you like to run the automated installation? (y/*)" response
-
-if [[ $response =~ ^(yes|y|Y) ]];then
-    install
-else
     bird "Ok. Some other time."
 fi
