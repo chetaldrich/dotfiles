@@ -22,7 +22,9 @@ function run(){
 function linstall(){
     bird "Updating apt-get..."
     sudo apt-get update
-    bird "Symlinking .vim"
+    bird "Adding and symlinking vim configurations..."
+    ./scripts/linkvim.sh
+
 }
 
 function minstall(){
@@ -30,8 +32,12 @@ function minstall(){
     ./scripts/brewinstall.sh
     bird "Installing Atom packages..."
     ./scripts/apm.sh
+    bird "Adding and symlinking vim configurations..."
+    ./scripts/linkvim.sh
 }
 
 function sinstall(){
     bird "Adding and symlinking vim configurations..."
+    ./scripts/linkvim.sh
+    
 }

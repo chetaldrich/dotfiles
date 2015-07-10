@@ -20,8 +20,6 @@ syntax on
 " set numbering by default
 set number
 
-" Sets the NERDTree to open by default when I open Vim 
-autocmd vimenter * NERDTree
 "------------------------------------------------------------
 set hidden
 
