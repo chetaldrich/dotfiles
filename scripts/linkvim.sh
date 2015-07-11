@@ -9,11 +9,11 @@ if [[ -z $(cd ~; ls -a ~ | grep .vimrc) ]];then
 else
     read -r -p ".vimrc is already present. Link anyway? (y/*)" response
 
-    if [[ $response =~ ^(y) ]];then
+    if [[ $response =~ ^(yes|y|Y) ]];then
         rm ~/.vimrc
         ln -s ~/dotfiles/common/vimrc ~/.vimrc
     else
-        echo -e "${COL_YELLOW} not replacing .vimrc ${COL_RESET}"
+        print_yellow "Not replacing .vimrc"
     fi
 fi
 
@@ -22,10 +22,10 @@ if [[ -z $(cd ~; ls -a ~ | grep ^.vim$) ]];then
 else
     read -r -p ".vim directory is already present. Link anyway? (y/*)" response
 
-    if [[ $response =~ ^(y) ]];then
+    if [[ $response =~ ^(yes|y|Y) ]];then
         rm -rf ~/.vim
         ln -s ~/dotfiles/common/vim ~/.vim
     else
-        echo -e "${COL_YELLOW} not replacing .vim ${COL_RESET}"
+        print_yellow "Not replacing .vim"
     fi
 fi
