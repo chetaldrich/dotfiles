@@ -7,14 +7,11 @@ export ZSH=/Users/chetaldrich/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=10
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,11 +59,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -74,8 +71,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-
 # Aliases
 alias up='cd ..'
+
+

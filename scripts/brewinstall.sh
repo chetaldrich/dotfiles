@@ -6,7 +6,7 @@ fi
 
 # COMMAND LINE TOOLS
 # Insert command line tools to be installed by brew here:
-CLI=( caskroom/cask/brew-cask git ruby python3 node plt-racket gcc )
+CLI=( caskroom/cask/brew-cask git ruby python3 node plt-racket gcc autojump go )
 
 for item in "${CLI[@]}"
 do

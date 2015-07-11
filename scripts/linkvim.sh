@@ -4,7 +4,7 @@ source ../lib.sh
 
 # Creates symlinks to vim configurations in common/
 
-if [[ -z $(cd ~; ls -a ~ | grep .vimrc) ]];then
+if [[ -z $(ls -a ~ | grep .vimrc) ]];then
     ln -s ~/dotfiles/common/vimrc ~/.vimrc
 else
     read -r -p ".vimrc is already present. Link anyway? (y/*)" response
@@ -17,7 +17,7 @@ else
     fi
 fi
 
-if [[ -z $(cd ~; ls -a ~ | grep ^.vim$) ]];then
+if [[ -z $(ls -a ~ | grep ^.vim$) ]];then
     ln -s ~/dotfiles/common/vim ~/.vim
 else
     read -r -p ".vim directory is already present. Link anyway? (y/*)" response
@@ -29,3 +29,5 @@ else
         print_yellow "Not replacing .vim"
     fi
 fi
+
+print_green "Vim configuration completed"
