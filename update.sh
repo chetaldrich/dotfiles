@@ -2,8 +2,6 @@
 
 # Chet Aldrich
 # An install script for dotfiles
-# that creates a symlink for each
-# necessary folder.
 
 chmod +x scripts/*
 chmod +x lib.sh
@@ -19,6 +17,6 @@ elif [[ $maclinuxresponse =~ ^(linux) ]];then
     linstall
 elif [[ $maclinuxresponse =~ ^(server) ]];then
     sinstall
-else 
+else
     bird "Ok. Some other time."
 fi

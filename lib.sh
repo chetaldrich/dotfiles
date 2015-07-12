@@ -37,7 +37,8 @@ function linstall(){
     sudo apt-get update
     bird "Adding and symlinking vim configurations..."
     ./scripts/linkvim.sh
-
+    bird "Adding and symlinking other configuration files..."
+    ./scripts/l_link_config.sh
 }
 
 function minstall(){
