@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 
+# A script for managing vim bundles from the vim site
+# and from GitHub. Essentially trashes the bundles and
+# performs a reinstall of the packages listed in the
+# bundle lists below. 
+
+# Insert bundles from GitHub here. Make sure to 
+# use a full URL!
 git_bundles = [ 
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/tpope/vim-surround.git",
@@ -8,6 +15,11 @@ git_bundles = [
   "https://github.com/scrooloose/nerdtree.git",
 ]
 
+# Insert bundles from Vim.org. Place the name of
+# the plugin in the first entry, the number of the
+# plugin in the URL on the page in the second, and 
+# the script type (which can be found on the page)
+# in the third entry. 
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
   ["jquery",        "12107", "syntax"],
@@ -16,11 +28,13 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
+FileUtils.mkdir_p 'bundle/'
+
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
 FileUtils.cd(bundles_dir)
 
-puts "trashing everything (lookout!)"
+puts "Trashing Bundles....(lookout!)"
 Dir["*"].each {|d| FileUtils.rm_rf d }
 
 git_bundles.each do |url|
@@ -31,7 +45,7 @@ git_bundles.each do |url|
 end
 
 vim_org_scripts.each do |name, script_id, script_type|
-  puts "downloading #{name}"
+  puts "Downloading #{name}"
   local_file = File.join(name, script_type, "#{name}.vim")
   FileUtils.mkdir_p(File.dirname(local_file))
   File.open(local_file, "w") do |file|
