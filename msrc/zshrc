@@ -6,7 +6,9 @@ alias up='cd ..'
 alias busy='cat /dev/urandom | hexdump -C | grep "ca fe"'
 alias ebp='vim ~/.zshrc && source ~/.zshrc'
 alias dfl='cd ~/dotfiles'
+alias c='cd ~/code'
 alias f='find . -name'
+
 
 # Git related aliases
 
@@ -44,6 +46,7 @@ plugins=(python git brew autojump bower)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # autojump configuration 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
