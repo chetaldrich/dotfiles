@@ -5,7 +5,7 @@ export ZSH=/Users/chetaldrich/.oh-my-zsh
 alias up='cd ..'
 alias busy='cat /dev/urandom | hexdump -C | grep "ca fe"'
 alias ebp='vim ~/.zshrc && source ~/.zshrc'
-alias df='cd ~/dotfiles'
+alias dfl='cd ~/dotfiles'
 alias f='find . -name'
 
 # Git related aliases
