@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../lib.sh
+source ~/dotfiles/lib.sh
 
 # Creates symlinks to vim configurations in common/
 
