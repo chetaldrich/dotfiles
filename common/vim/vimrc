@@ -20,6 +20,9 @@ syntax on
 " set numbering by default
 set number
 
+" sets the keymapping for Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 "------------------------------------------------------------
 set hidden
 

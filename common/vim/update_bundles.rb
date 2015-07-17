@@ -13,6 +13,9 @@ git_bundles = [
   "git://github.com/jiangmiao/auto-pairs.git",
   "git://github.com/msanders/snipmate.vim.git",
   "https://github.com/scrooloose/nerdtree.git",
+  "https://github.com/derekwyatt/vim-scala",
+  "https://github.com/wting/rust.vim.git",
+  "http://github.com/sjl/gundo.vim.git",
 ]
 
 # Insert bundles from Vim.org. Place the name of

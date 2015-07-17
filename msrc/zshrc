@@ -8,7 +8,7 @@ alias ebp='vim ~/.zshrc && source ~/.zshrc'
 alias dfl='cd ~/dotfiles'
 alias c='cd ~/code'
 alias f='find . -name'
-
+alias sl='ls'
 
 # Git related aliases
 
