@@ -80,4 +80,6 @@ function minstall(){
 function sinstall(){
     bird "Adding and symlinking vim configurations..."
     ./scripts/linkvim.sh
+    bird "Symlinking shell configurations..."
+    ./scripts/s_link_config.sh
 }
