@@ -73,7 +73,7 @@ function minstall(){
     ./scripts/apm.sh
     bird "Adding and symlinking vim configurations..."
     ./scripts/linkvim.sh
-    bird "Adding shell configurations..."
+    bird "Adding additional configurations..."
     ./scripts/m_link_config.sh
 }
 

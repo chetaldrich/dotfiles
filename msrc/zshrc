@@ -9,6 +9,8 @@ alias dfl='cd ~/dotfiles'
 alias c='cd ~/code'
 alias f='find . -name'
 alias sl='ls'
+alias t=trash
+alias rm='rm -i'
 
 # Git related aliases
 
