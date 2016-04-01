@@ -43,7 +43,7 @@ set hlsearch
 
 
 "------------------------------------------------------------
-" Usability options 
+" Usability options
 "
 
 " Use case insensitive search, except when using capital letters
@@ -99,7 +99,7 @@ set pastetoggle=<F11>
 
 
 "------------------------------------------------------------
-" Indentation options 
+" Indentation options
 
 "TODO find some good indentation options
 
@@ -108,7 +108,7 @@ set shiftwidth=4
 set expandtab
 
 "------------------------------------------------------------
-" Mappings 
+" Mappings
 "
 " Useful mappings
 

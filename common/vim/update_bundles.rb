@@ -11,11 +11,10 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/jiangmiao/auto-pairs.git",
-  "git://github.com/msanders/snipmate.vim.git",
   "https://github.com/scrooloose/nerdtree.git",
   "https://github.com/derekwyatt/vim-scala",
   "https://github.com/wting/rust.vim.git",
-  "http://github.com/sjl/gundo.vim.git",
+  "https://github.com/reedes/vim-pencil",
 ]
 
 # Insert bundles from Vim.org. Place the name of
@@ -24,8 +23,7 @@ git_bundles = [
 # the script type (which can be found on the page)
 # in the third entry. 
 vim_org_scripts = [
-  ["IndexedSearch", "7062",  "plugin"],
-  ["jquery",        "12107", "syntax"],
+   ["jquery",        "12107", "syntax"],
 ]
 
 require 'fileutils'
