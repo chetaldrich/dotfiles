@@ -1,22 +1,12 @@
 #!/bin/bash
 
 ESC_SEQ="\x1b["
-COL_CYAN=$ESC_SEQ"36;01m"
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_YELLOW=$ESC_SEQ"33;01m"
-COL_RED=$ESC_SEQ"0;31m"
 COL_GREEN=$ESC_SEQ"0;32m"
-
-function run(){
-    echo -en "$COL_YELLOW ⇒ $COL_RESET"$1": "
-}
 
 function print_yellow() {
     echo -e "${COL_YELLOW} $1 ${COL_RESET}"
-}
-
-function print_red() {
-    echo -e "${COL_RED} $1 ${COL_RESET}"
 }
 
 function print_green() {
