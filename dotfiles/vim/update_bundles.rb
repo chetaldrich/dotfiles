@@ -15,6 +15,7 @@ git_bundles = [
   "https://github.com/derekwyatt/vim-scala",
   "https://github.com/wting/rust.vim.git",
   "https://github.com/reedes/vim-pencil",
+  "https://github.com/terryma/vim-multiple-cursors",
 ]
 
 # Insert bundles from Vim.org. Place the name of

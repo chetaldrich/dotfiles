@@ -1,9 +1,30 @@
 " URL: github.com/chetaldrich/dotfiles
 " Authors: Chet Aldrich
 "------------------------------------------------------------
-" Calls the pathogen plugin manager
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+
+Plug 'derekwyatt/vim-scala'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+" NERDtree settings 
+
+" Set NERDtree to open on startup
+autocmd vimenter * NERDTree
+" Set NERDtree to toggle to text editor on startup
+autocmd vimenter * wincmd p
+" Set NERDtree to toggle on Ctrl-M
+map <C-m> :NERDTreeToggle<CR>
+" Set NERDtree to close automatically if it's the only thing open. 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
