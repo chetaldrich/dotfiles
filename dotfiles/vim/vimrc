@@ -8,12 +8,21 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
+" Set solarized theme
 syntax enable
 set background=dark
 colorscheme solarized
+
+" Set airline powerline fonts and theme
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 " NERDtree settings 
 
