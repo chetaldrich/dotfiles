@@ -3,7 +3,6 @@
 # Chet Aldrich
 # An install script for dotfiles
 
-chmod +x lib/*
 chmod +x lib.sh
 source ./lib.sh
 
