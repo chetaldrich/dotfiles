@@ -12,8 +12,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
+
+" Set Ack to call ag if it is available
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+" Set Ack to launch on <cmd>-<shift>-f
+nmap <C-f> :Ack <space>
+
+" Close the search
+nmap <C-c> :ccl <ENTER>
 
 " Set solarized theme
 syntax enable
