@@ -14,6 +14,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mileszs/ack.vim'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+
 
 call plug#end()
 
