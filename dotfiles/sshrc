@@ -14,6 +14,12 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 take() { mkdir $1 && cd $1; }
 
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='vim'
+fi
+
 __powerline() {
 
     # Unicode symbols
