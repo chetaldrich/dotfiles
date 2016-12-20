@@ -11,8 +11,23 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'mileszs/ack.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
+
+" Set Ack to call ag if it is available
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+" Set Ack to launch on <cmd>-<shift>-f
+nmap <C-f> :Ack <space>
+
+" Close the search
+nmap <C-c> :ccl <ENTER>
 
 " Set solarized theme
 syntax enable
@@ -23,16 +38,17 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
+" Set airline powerline fonts and theme
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+
 " NERDtree settings 
 
-" Set NERDtree to open on startup
-autocmd vimenter * NERDTree
-" Set NERDtree to toggle to text editor on startup
-autocmd vimenter * wincmd p
-" Set NERDtree to toggle on Ctrl-M
-map <C-m> :NERDTreeToggle<CR>
-" Set NERDtree to close automatically if it's the only thing open. 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Set NERDtree to toggle with keyboard shortcuts 
+map <C-h> :NERDTreeTabsToggle<CR>
+map <C-m> :NERDTreeTabsFind<CR>
+
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -125,6 +141,10 @@ set expandtab
 "
 " Useful mappings
 
+" Map Ctrl ] and [ to switch tabs
+nnoremap <C-o> :tabn <ENTER>
+nnoremap <C-i> :tabN <ENTER>
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -132,3 +152,9 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" No arrow keys allowed
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
