@@ -1,16 +1,21 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+export P4PORT="ssl:perforce.savagebeast.com:1666"
+export P4CLIENT="caldrich-laptop"
+#export P4CLIENT="caldrich-integ"
 
+HISTFILESIZE=10000000
+
+# aliases
 alias vi='vim'
 alias ebp='vim ~/.zshrc && source ~/.zshrc'
 alias t='trash'
 alias f='find . -name'
 alias sl='ls'
 alias rm='rm -i'
+alias ssh='sshrc'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
