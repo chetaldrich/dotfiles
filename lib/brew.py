@@ -3,7 +3,10 @@ from lib.config_plugin import *
 
 class BrewPlugin(ConfigPlugin):
 
-    def validate():
+    def section() -> str:
+        return 'brew'
+
+    def validate(config: dict) -> bool:
         pass
 
     def register():

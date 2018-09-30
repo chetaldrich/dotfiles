@@ -6,7 +6,10 @@ class AtomPlugin(ConfigPlugin):
     def __init__(self):
         pass
 
-    def validate():
+    def section() -> str:
+        return 'atom'
+
+    def validate(config: dict) -> bool:
         pass
 
     def register():
