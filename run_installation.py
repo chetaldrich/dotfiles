@@ -11,7 +11,8 @@ def get_brew_casks():
     return [
         'atom',
         'chrome',
-        '1password'
+        '1password',
+        'dropbox'
     ]
 
 def install_brew_packages():
