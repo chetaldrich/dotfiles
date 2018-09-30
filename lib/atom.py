@@ -1,8 +1,18 @@
 import subprocess as sp
 import lib.brew as brew
+from lib.config_plugin import *
 
-class AtomInstallation:
+class AtomPlugin(ConfigPlugin):
     def __init__(self):
+        pass
+
+    def validate():
+        pass
+
+    def register():
+        pass
+
+    def apply():
         pass
 
     def desired_atom_packages(self):

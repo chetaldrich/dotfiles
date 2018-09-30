@@ -29,8 +29,8 @@ def setup_atom():
 def main():
     configuration = config.Configuration()
 
-    # atom_installation = atom.AtomInstallation()
-    # atom_installation.install_atom_packages()
+    plugin = atom.AtomPlugin()
+    plugin.install_atom_packages()
     install_brew_packages()
 
 if __name__ == '__main__':
