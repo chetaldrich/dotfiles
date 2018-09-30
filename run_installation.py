@@ -1,5 +1,6 @@
 import lib.atom as atom
 import lib.brew as brew
+import lib.config as config
 
 def get_brew_packages():
     return [
@@ -24,9 +25,11 @@ def setup_atom():
     atom.install_atom_packages()
 
 def main():
-    atom_installation = atom.AtomInstallation()
-    atom_installation.install_atom_packages()
-    install_brew_packages()
+    config.Configuration().load_yaml()
+
+    # atom_installation = atom.AtomInstallation()
+    # atom_installation.install_atom_packages()
+    # install_brew_packages()
 
 if __name__ == '__main__':
     main()

@@ -4,9 +4,9 @@ configuration:
       - 'python3'
       - 'trash-cli'
     cask:
-      - 'atom',
-      - 'chrome',
-      - '1password',
+      - 'atom'
+      - 'chrome'
+      - '1password'
       - 'dropbox'
   atom:
     packages:
