@@ -9,10 +9,7 @@ class BrewPlugin(ConfigPlugin):
     def validate(config: dict) -> bool:
         pass
 
-    def register():
-        pass
-
-    def apply():
+    def apply(config: dict):
         pass
 
     def install(self, package: str):

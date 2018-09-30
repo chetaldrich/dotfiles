@@ -4,10 +4,9 @@ class ConfigPlugin(ABC):
 
     @abstractmethod
     def section() -> str:
-        """ Specifies which section of the YAML config used to run this plugin
+        """ Specifies which section of the YAML config used to run this plugin.
         """
         pass
-
 
     @abstractmethod
     def validate(config: dict) -> bool:
@@ -17,9 +16,6 @@ class ConfigPlugin(ABC):
         pass
 
     @abstractmethod
-    def register():
-        pass
-
-    @abstractmethod
-    def apply():
+    def apply(config: dict):
+        """ Invokes the configuration plugin on the valid configuration."""
         pass

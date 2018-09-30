@@ -12,10 +12,7 @@ class AtomPlugin(ConfigPlugin):
     def validate(config: dict) -> bool:
         pass
 
-    def register():
-        pass
-
-    def apply():
+    def apply(config: dict):
         pass
 
     def desired_atom_packages(self):
