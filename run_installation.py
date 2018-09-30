@@ -17,19 +17,21 @@ def get_brew_casks():
     ]
 
 def install_brew_packages():
+    plugin = brew.BrewPlugin()
     for package in get_brew_packages():
-        brew.install(package)
+        plugin.install(package)
 
 def setup_atom():
-    brew.cask_install('atom')
+    plugin = brew.BrewPlugin()
+    plugin.cask_install('atom')
     atom.install_atom_packages()
 
 def main():
-    config.Configuration().load_yaml()
+    configuration = config.Configuration()
 
     # atom_installation = atom.AtomInstallation()
     # atom_installation.install_atom_packages()
-    # install_brew_packages()
+    install_brew_packages()
 
 if __name__ == '__main__':
     main()

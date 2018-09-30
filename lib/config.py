@@ -2,7 +2,7 @@ import yaml
 
 class Configuration:
     def __init__(self):
-        pass
+        self.config = self.load_yaml()
 
     def load_yaml(self):
         with open("config.yaml", 'r') as stream:
