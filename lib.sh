@@ -13,12 +13,12 @@ function print_green() {
     echo -e "${COL_GREEN} $1 ${COL_RESET}"
 }
 
-# Symlinks into the home directory. 
-# Usage: 
+# Symlinks into the home directory.
+# Usage:
 # prompt_install_home param1 param2
-# where 
+# where
 # $1 = file name inside of dotfiles, without .
-# $2 = src file to install from 
+# $2 = src file to install from
 function prompt_install_home() {
     if [[ -z $(ls -a ~ | grep .$1) ]];then
         ln -s ~/shell_config/$2/$1 ~/.$1
@@ -31,8 +31,8 @@ function prompt_install_home() {
             print_green ".$1 installed"
         else
             print_yellow "Not replacing .$1"
-        fi  
+        fi
     fi
 
-    print_green ".$1 configuration complete" 
+    print_green ".$1 configuration complete"
 }

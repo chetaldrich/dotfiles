@@ -1,3 +1,5 @@
 .netrwhist
 .DS_Store
 plugged/
+env/
+lib/__pycache__/
