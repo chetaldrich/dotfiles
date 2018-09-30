@@ -23,7 +23,8 @@ def setup_atom():
     atom.install_atom_packages()
 
 def main():
-    setup_atom()
+    atom_installation = atom.AtomInstallation()
+    atom_installation.install_atom_packages()
     install_brew_packages()
 
 if __name__ == '__main__':
