@@ -1,4 +1,6 @@
 import subprocess as sp
+from typing import List
+from schema import Schema, And, Use, Optional
 from lib.config_plugin import *
 
 class BrewPlugin(ConfigPlugin):
@@ -6,7 +8,7 @@ class BrewPlugin(ConfigPlugin):
     def section() -> str:
         return 'brew'
 
-    def validate(config: dict) -> bool:
+    def validate(config: dict) -> (bool, List[str]):
         pass
 
     def apply(config: dict):

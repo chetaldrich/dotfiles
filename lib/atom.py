@@ -1,5 +1,6 @@
 import subprocess as sp
 import lib.brew as brew
+from typing import List
 from lib.config_plugin import *
 
 class AtomPlugin(ConfigPlugin):
@@ -9,7 +10,7 @@ class AtomPlugin(ConfigPlugin):
     def section() -> str:
         return 'atom'
 
-    def validate(config: dict) -> bool:
+    def validate(config: dict) -> (bool, List[str]):
         pass
 
     def apply(config: dict):
