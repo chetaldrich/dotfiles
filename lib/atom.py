@@ -1,6 +1,6 @@
 import subprocess as sp
 import lib.brew as brew
-from schema import Schema, And, Use, Optional
+from schema import Schema
 from lib.config_plugin import *
 
 class AtomPlugin(ConfigPlugin):

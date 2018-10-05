@@ -1,6 +1,7 @@
 import lib.atom as atom
 import lib.brew as brew
 import lib.config as config
+import sys
 
 def plugins():
     return [
@@ -9,7 +10,7 @@ def plugins():
     ]
 
 def main():
-    configuration = config.Configuration()
+    configuration = config.Configuration(sys.argv[1])
     for plugin in plugins():
         configuration.register(plugin)
 

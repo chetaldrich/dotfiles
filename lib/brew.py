@@ -1,6 +1,5 @@
 import subprocess as sp
-from typing import List
-from schema import Schema, And, Use, Optional
+from schema import Schema
 from lib.config_plugin import *
 
 class BrewPlugin(ConfigPlugin):
