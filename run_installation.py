@@ -2,25 +2,6 @@ import lib.atom as atom
 import lib.brew as brew
 import lib.config as config
 
-def get_brew_packages():
-    return [
-        'python3',
-        'trash-cli'
-    ]
-
-def get_brew_casks():
-    return [
-        'atom',
-        'chrome',
-        '1password',
-        'dropbox'
-    ]
-
-def install_brew_packages():
-    plugin = brew.BrewPlugin()
-    for package in get_brew_packages():
-        plugin.install(package)
-
 def setup_atom():
     plugin = brew.BrewPlugin()
     plugin.cask_install('atom')
@@ -29,11 +10,8 @@ def setup_atom():
 def main():
     configuration = config.Configuration()
     configuration.register(brew.BrewPlugin())
+    configuration.register(atom.AtomPlugin())
     configuration.apply()
-
-    # plugin = atom.AtomPlugin()
-    # plugin.install_atom_packages()
-    # install_brew_packages()
 
 if __name__ == '__main__':
     main()

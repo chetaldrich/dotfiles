@@ -1,31 +1,28 @@
 import subprocess as sp
 import lib.brew as brew
-from typing import List
+from schema import Schema, And, Use, Optional
 from lib.config_plugin import *
 
 class AtomPlugin(ConfigPlugin):
     def __init__(self):
-        pass
+        self.schema = Schema({
+            'packages': [str]
+        })
 
-    def section() -> str:
+    def section(self) -> str:
         return 'atom'
 
-    def validate(config: dict) -> (bool, List[str]):
-        pass
+    def validate(self, config: dict) -> bool:
+        try:
+            self.schema.validate(config)
+            return True
+        except:
+            return False
 
-    def apply(config: dict):
-        pass
-
-    def desired_atom_packages(self):
-        return [
-            'vim-mode-plus',
-            'ex-mode',
-        ]
+    def apply(self, config: dict):
+        for package in config['packages']:
+            self.apm_install(package)
 
     def apm_install(self, package_name: str):
         command = ['apm', 'install', package_name]
         sp.run(command)
-
-    def install_atom_packages(self):
-        for package in self.desired_atom_packages():
-            self.apm_install(package)
