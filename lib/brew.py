@@ -5,13 +5,23 @@ from lib.config_plugin import *
 
 class BrewPlugin(ConfigPlugin):
 
-    def section() -> str:
+    def __init__(self):
+        self.schema = Schema({
+            'packages': [str],
+            'cask': [str]
+        })
+
+    def section(self) -> str:
         return 'brew'
 
-    def validate(config: dict) -> (bool, List[str]):
-        pass
+    def validate(self, config: dict) -> bool:
+        try:
+            self.schema.validate(config)
+            return True
+        except:
+            return False
 
-    def apply(config: dict):
+    def apply(self, config: dict):
         pass
 
     def install(self, package: str):

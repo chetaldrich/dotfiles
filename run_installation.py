@@ -28,10 +28,11 @@ def setup_atom():
 
 def main():
     configuration = config.Configuration()
+    configuration.register(brew.BrewPlugin())
 
-    plugin = atom.AtomPlugin()
-    plugin.install_atom_packages()
-    install_brew_packages()
+    # plugin = atom.AtomPlugin()
+    # plugin.install_atom_packages()
+    # install_brew_packages()
 
 if __name__ == '__main__':
     main()

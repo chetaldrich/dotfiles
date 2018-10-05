@@ -1,8 +1,14 @@
 import yaml
+from lib.config_plugin import ConfigPlugin
 
 class Configuration:
     def __init__(self):
-        self.config = self.load_yaml()
+        self.config = self.load_yaml()['configuration']
+        self.plugins = []
+
+    def register(self, plugin: ConfigPlugin):
+        if plugin.section() in self.config and plugin.validate(self.config[plugin.section()]):
+            self.plugins.append(plugin)
 
     def load_yaml(self):
         with open("config.yaml", 'r') as stream:
