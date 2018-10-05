@@ -10,6 +10,10 @@ class Configuration:
         if plugin.section() in self.config and plugin.validate(self.config[plugin.section()]):
             self.plugins.append(plugin)
 
+    def apply(self):
+        for plugin in self.plugins:
+            plugin.apply(self.config[plugin.section()])
+
     def load_yaml(self):
         with open("config.yaml", 'r') as stream:
             try:

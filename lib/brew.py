@@ -8,7 +8,7 @@ class BrewPlugin(ConfigPlugin):
     def __init__(self):
         self.schema = Schema({
             'packages': [str],
-            'cask': [str]
+            'casks': [str]
         })
 
     def section(self) -> str:
@@ -22,7 +22,10 @@ class BrewPlugin(ConfigPlugin):
             return False
 
     def apply(self, config: dict):
-        pass
+        for package in config['packages']:
+            self.install(package)
+        for cask in config['casks']:
+            self.cask_install(cask)
 
     def install(self, package: str):
         if self.is_installed(package):
@@ -37,7 +40,7 @@ class BrewPlugin(ConfigPlugin):
         if self.is_installed(package, cask=True):
             print("Already installed brew package {}. Skipping...".format(package))
         else:
-            sp.run(['brew', 'cask', 'install', package_name])
+            sp.run(['brew', 'cask', 'install', package])
 
     def is_installed(self, package_name: str, cask=False) -> bool:
         """Given a package, determine whether brew has it installed or not."""

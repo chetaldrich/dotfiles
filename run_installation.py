@@ -29,6 +29,7 @@ def setup_atom():
 def main():
     configuration = config.Configuration()
     configuration.register(brew.BrewPlugin())
+    configuration.apply()
 
     # plugin = atom.AtomPlugin()
     # plugin.install_atom_packages()
