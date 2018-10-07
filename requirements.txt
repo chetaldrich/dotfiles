@@ -1,2 +1,1 @@
-PyYAML==3.13
-schema==0.6.8
+mac_config==0.0.4
