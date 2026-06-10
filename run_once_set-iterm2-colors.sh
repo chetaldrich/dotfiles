@@ -81,6 +81,10 @@ for iterm_key, colors_key in color_map.items():
         # Also set the Dark mode variants
         profile[f"{iterm_key} (Dark)"] = convert_color(colors[colors_key])
 
+# Set font and powerline glyphs
+profile["Normal Font"] = "Monaco 16"
+profile["Draw Powerline Glyphs"] = True
+
 # Write the modified preferences
 with open("/tmp/iterm2.plist", "wb") as f:
     plistlib.dump(plist, f)
@@ -88,6 +92,6 @@ with open("/tmp/iterm2.plist", "wb") as f:
 subprocess.run(["defaults", "import", "com.googlecode.iterm2", "/tmp/iterm2.plist"], check=True)
 os.remove("/tmp/iterm2.plist")
 
-print("Solarized Dark color scheme applied successfully")
+print("iTerm2 configured: Solarized Dark, Monaco 16, powerline glyphs enabled")
 print("Restart iTerm2 to see changes")
 PYEOF
