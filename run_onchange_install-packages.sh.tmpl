@@ -1,0 +1,5 @@
+#!/bin/bash
+# Installs packages via Homebrew Bundle
+if command -v brew &>/dev/null; then
+    brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile --force
+fi

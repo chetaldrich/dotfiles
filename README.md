@@ -1,5 +1,9 @@
-# .files
+# dotfiles
 
-A repo to track my current configuration settings.
+Managed with [chezmoi](https://www.chezmoi.io/).
 
-Currently symlinks vim and a .zshrc
+## Bootstrap a new machine
+
+```sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply chetaldrich
+```
