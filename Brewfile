@@ -7,8 +7,10 @@ brew "ripgrep"
 brew "trash"
 
 # Casks
+cask "raycast"
 cask "1password"
 cask "firefox"
+cask "hammerspoon"
 cask "iterm2"
 cask "readdle-spark"
 cask "spotify"
