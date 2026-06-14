@@ -1,8 +1,11 @@
 hs.hotkey.bind({ "ctrl" }, "space", function()
   local pos = hs.mouse.absolutePosition()
-  local click = hs.eventtap.event.newMouseEvent(
-    hs.eventtap.event.types.rightMouseClick,
+  hs.eventtap.event.newMouseEvent(
+    hs.eventtap.event.types.rightMouseDown,
     pos
-  )
-  click:post()
+  ):post()
+  hs.eventtap.event.newMouseEvent(
+    hs.eventtap.event.types.rightMouseUp,
+    pos
+  ):post()
 end)
