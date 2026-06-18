@@ -5,35 +5,28 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 ## Setup
 
 ```sh
-# Bootstrap a new machine
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply chetaldrich
-
-# Or if chezmoi is already installed
-make apply
 ```
 
-## Makefile
-
-| Command | Description |
-|---|---|
-| `make apply` | Apply dotfiles via chezmoi |
-| `make diff` | Preview changes before applying |
-| `make status` | Show what's out of sync |
-| `make edit` | Open chezmoi source directory |
-| `make update` | Pull and apply latest changes |
+If chezmoi is already installed, run `make apply`.
 
 ## Script conventions
 
-- `run_once_*` — runs only the first time (tracked by chezmoi state)
-- `run_onchange_*` — runs only when script contents change
-- `run_always_*` — runs every `chezmoi apply` (avoid unless needed)
-- Scripts ending in `.tmpl` are treated as Go templates by chezmoi
+| Prefix | Runs when |
+|---|---|
+| `run_once_*` | First apply only |
+| `run_onchange_*` | Script contents change |
+| `run_always_*` | Every `chezmoi apply` (avoid) |
 
-## Key files
+Scripts ending in `.tmpl` are Go templates processed by chezmoi.
 
-- `Brewfile` — run `brew bundle dump` to update from current machine
-- `dot_config/nvim/` — LazyVim starter template, customize in `lua/plugins/`
-- `dot_zshrc` — oh-my-zsh config, no Perforce vars
+## Makefile
+
+Run `make` with `apply`, `diff`, `status`, `edit` (opens source dir), or `update`.
+
+## Brewfile
+
+Run `brew bundle dump` from the repo root to snapshot current machine state.
 
 ## Git
 
