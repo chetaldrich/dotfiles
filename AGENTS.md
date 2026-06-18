@@ -12,23 +12,6 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply chetaldrich
 make apply
 ```
 
-## Structure
-
-```
-~/code/dotfiles/
-├── dot_zshrc                          # oh-my-zsh, bullet-train theme
-├── dot_sshrc                          # SSH powerline prompt
-├── dot_dark.itermcolors               # iTerm2 Solarized Dark
-├── dot_config/nvim/                   # LazyVim (neovim distro)
-├── Brewfile                           # Homebrew packages + casks
-├── run_onchange_install-packages.sh.tmpl  # brew bundle install
-├── run_once_install-oh-my-zsh.sh      # oh-my-zsh installer
-├── run_once_set-iterm2-colors.sh      # applies Solarized Dark to iTerm2
-├── Makefile                           # shortcuts
-├── .chezmoiignore
-└── README.md
-```
-
 ## Makefile
 
 | Command | Description |
