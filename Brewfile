@@ -7,6 +7,7 @@ brew "ripgrep"
 brew "trash"
 
 # Casks
+cask "docker"
 cask "raycast"
 cask "1password"
 cask "firefox"
