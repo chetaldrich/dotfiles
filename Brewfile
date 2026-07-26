@@ -6,10 +6,11 @@ brew "opencode"
 brew "ripgrep"
 brew "trash"
 brew "gh"
+brew "uv"
 
 # Casks
 cask "displaylink"
-cask "docker"
+cask "docker-desktop"
 cask "raycast"
 cask "1password"
 cask "firefox"
