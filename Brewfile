@@ -5,6 +5,7 @@ brew "python3"
 brew "opencode"
 brew "ripgrep"
 brew "trash"
+brew "gh"
 
 # Casks
 cask "displaylink"
