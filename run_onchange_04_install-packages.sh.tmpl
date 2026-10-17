@@ -1,6 +1,35 @@
 #!/bin/bash
 # Brewfile hash: {{ include "Brewfile" | sha256sum }}
-# Installs packages via Homebrew Bundle
-if command -v brew &>/dev/null; then
-    brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile --force
+# Installs missing packages via Homebrew Bundle.
+#
+# Upgrades are intentionally NOT run here: `brew bundle` would otherwise upgrade
+# every outdated dependency on each `chezmoi apply`, which takes many minutes and
+# prints nothing while large casks download. Run `brew upgrade` when you actually
+# want to upgrade.
+
+if ! command -v brew &>/dev/null; then
+    echo "==> brew not found, skipping package install"
+    exit 0
 fi
+
+# Skip the silent `brew update` at the start of the run.
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_COLOR=1
+
+echo "==> Installing packages from Brewfile (no upgrades)"
+brew bundle \
+    --file={{ .chezmoi.sourceDir }}/Brewfile \
+    --force \
+    --no-upgrade \
+    --verbose
+status=$?
+
+if [ $status -eq 0 ]; then
+    echo "==> Brewfile satisfied"
+else
+    echo "==> brew bundle exited with status $status" >&2
+fi
+
+exit $status
